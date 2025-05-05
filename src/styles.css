@@ -1,0 +1,71 @@
+body {
+  background-color: #222;
+  color: #fff;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+.app {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.todo-list {
+  margin: 20px 0;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.todo-item input[type='checkbox'] {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  accent-color: #555;
+}
+
+.todo-item input[type='text'] {
+  flex-grow: 1;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 5px;
+  outline: none;
+  border-bottom: 1px solid #444;
+}
+
+.todo-item input[type='text']:focus {
+  border-bottom: 1px solid #888;
+}
+
+.todo-item.completed input[type='text'] {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.create-button {
+  background-color: #444;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.create-button:hover {
+  background-color: #555;
+}
+
+h1 {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 10px;
+}

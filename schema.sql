@@ -1,0 +1,7 @@
+
+CREATE TABLE todo (
+  id SERIAL PRIMARY KEY,
+  created_at TIMESTAMPTZ DEFAULT NOW() NOT NULL,
+  completed BOOLEAN DEFAULT TRUE NOT NULL,
+  description TEXT NOT NULL
+);
