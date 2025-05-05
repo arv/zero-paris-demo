@@ -8,19 +8,31 @@ importers:
 
   .:
     dependencies:
+      '@dotenvx/dotenvx':
+        specifier: ^1.41.0
+        version: 1.42.0
       '@rocicorp/zero':
         specifier: ^0.18.2025042300
         version: 0.18.2025042300
       nanoid:
         specifier: ^5.1.5
         version: 5.1.5
+      postgres:
+        specifier: ^3.4.5
+        version: 3.4.5
       preact:
         specifier: ^10.26.5
         version: 10.26.5
     devDependencies:
+      '@hono/node-server':
+        specifier: ^1.14.1
+        version: 1.14.1(hono@4.7.8)
       '@preact/preset-vite':
         specifier: ^2.10.1
         version: 2.10.1(@babel/core@7.27.1)(preact@10.26.5)(vite@6.3.4(@types/node@22.15.3)(tsx@4.19.4))
+      hono:
+        specifier: ^4.7.8
+        version: 4.7.8
       prettier:
         specifier: ^3.5.3
         version: 3.5.3
@@ -338,6 +350,12 @@ packages:
     resolution: {integrity: sha512-tMXdRCfYVixjuFK+Hk0Q1s38gV9zDiDJfWL3h1rv4Qc39oILCu1TRTDt7+fGUI8K4G1Fj125Hx/ru3azECWTyQ==}
     engines: {node: '>=6'}
     hasBin: true
+
+  '@hono/node-server@1.14.1':
+    resolution: {integrity: sha512-vmbuM+HPinjWzPe7FFPWMMQMsbKE9gDPhaH0FFdqbGpkT5lp++tcWDTxwBl5EgS5y6JVgIaCdjeHRfQ4XRBRjQ==}
+    engines: {node: '>=18.14.1'}
+    peerDependencies:
+      hono: ^4
 
   '@jridgewell/gen-mapping@0.3.8':
     resolution: {integrity: sha512-imAbBGkb+ebQyxKgzv5Hu2nmROxoDOXHh80evxdoXNOrvAnVx7zimzc1Oo5h9RlfV4vPXaE2iM5pOFbvOCClWA==}
@@ -1072,6 +1090,10 @@ packages:
   he@1.2.0:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
     hasBin: true
+
+  hono@4.7.8:
+    resolution: {integrity: sha512-PCibtFdxa7/Ldud9yddl1G81GjYaeMYYTq4ywSaNsYbB1Lug4mwtOMJf2WXykL0pntYwmpRJeOI3NmoDgD+Jxw==}
+    engines: {node: '>=16.9.0'}
 
   human-signals@2.1.0:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
@@ -1894,6 +1916,10 @@ snapshots:
       protobufjs: 7.5.0
       yargs: 17.7.2
 
+  '@hono/node-server@1.14.1(hono@4.7.8)':
+    dependencies:
+      hono: 4.7.8
+
   '@jridgewell/gen-mapping@0.3.8':
     dependencies:
       '@jridgewell/set-array': 1.2.1
@@ -2677,6 +2703,8 @@ snapshots:
       function-bind: 1.1.2
 
   he@1.2.0: {}
+
+  hono@4.7.8: {}
 
   human-signals@2.1.0: {}
 

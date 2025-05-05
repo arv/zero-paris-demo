@@ -7,15 +7,20 @@
     "build": "vite build",
     "preview": "vite preview",
     "zero-cache-dev": "zero-cache-dev -p src/shared/schema.ts",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "web-server-dev": "node --experimental-strip-types --no-warnings src/server/index.ts"
   },
   "dependencies": {
+    "@dotenvx/dotenvx": "^1.41.0",
     "@rocicorp/zero": "^0.18.2025042300",
     "nanoid": "^5.1.5",
+    "postgres": "^3.4.5",
     "preact": "^10.26.5"
   },
   "devDependencies": {
+    "@hono/node-server": "^1.14.1",
     "@preact/preset-vite": "^2.10.1",
+    "hono": "^4.7.8",
     "prettier": "^3.5.3",
     "typescript": "^5.8.3",
     "vite": "^6.3.4"

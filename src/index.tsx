@@ -6,16 +6,18 @@ import {
 } from '@rocicorp/zero/react';
 import {nanoid} from 'nanoid';
 import {render} from 'preact';
+import {type Mutators, mutators} from './shared/mutators.js';
 import {type Schema, schema, type Todo} from './shared/schema.js';
 import './styles.css';
 
-const useZero = useZeroWithTypeParams<Schema>;
+const useZero = useZeroWithTypeParams<Schema, Mutators>;
 
 export function App() {
   const z = new Zero({
     schema,
     userID: 'anon',
     server: import.meta.env.VITE_PUBLIC_SERVER,
+    mutators,
   });
 
   z.query.todo.preload();
@@ -40,11 +42,9 @@ export function Root() {
       <button
         class="create-button"
         onClick={() =>
-          z.mutate.todo.insert({
+          z.mutate.todo.add({
             id: nanoid(),
             description: 'Hi Paris',
-            completed: false,
-            createdAt: Date.now(),
           })
         }
       >
@@ -71,12 +71,12 @@ function TodoItem({todo}: {todo: Todo}) {
       />
       <input
         type="text"
-        onInput={e =>
+        onInput={e => {
           z.mutate.todo.update({
             id,
             description: e.currentTarget.value,
-          })
-        }
+          });
+        }}
         value={description}
       />
     </div>
