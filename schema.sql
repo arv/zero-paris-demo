@@ -1,0 +1,7 @@
+
+CREATE TABLE todo (
+  id TEXT PRIMARY KEY,
+  created_at TIMESTAMPTZ DEFAULT NOW() NOT NULL,
+  completed BOOLEAN DEFAULT FALSE NOT NULL,
+  description TEXT NOT NULL
+);

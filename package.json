@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "zero-cache-dev": "zero-cache-dev -p src/shared/schema.ts",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@rocicorp/zero": "^0.18.2025042300",
+    "nanoid": "^5.1.5",
+    "preact": "^10.26.5"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.10.1",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.4"
+  }
+}
