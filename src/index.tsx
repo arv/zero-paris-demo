@@ -56,15 +56,15 @@ export function Root() {
 
 function TodoItem({todo}: {todo: Todo}) {
   const z = useZero();
-  const {completed} = todo;
+  const {completed, id, description} = todo;
   return (
-    <div class={`todo-item ${completed ? 'complete' : 'incomplete'}`}>
+    <div class={`todo-item`}>
       <input
         type="checkbox"
         checked={completed}
         onChange={e =>
           z.mutate.todo.update({
-            id: todo.id,
+            id,
             completed: e.currentTarget.checked,
           })
         }
@@ -73,11 +73,11 @@ function TodoItem({todo}: {todo: Todo}) {
         type="text"
         onInput={e =>
           z.mutate.todo.update({
-            id: todo.id,
+            id,
             description: e.currentTarget.value,
           })
         }
-        value={todo.description}
+        value={description}
       />
     </div>
   );
