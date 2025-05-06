@@ -20,33 +20,32 @@ body {
   display: flex;
   align-items: center;
   padding: 10px;
-}
 
-.todo-item input[type='checkbox'] {
-  margin-right: 10px;
-  width: 18px;
-  height: 18px;
-  accent-color: #555;
-}
+  input[type='checkbox'] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    accent-color: #555;
+  }
 
-.todo-item input[type='text'] {
-  flex-grow: 1;
-  background-color: transparent;
-  border: none;
-  color: #fff;
-  font-size: 16px;
-  padding: 5px;
-  outline: none;
-  border-bottom: 1px solid #444;
-}
+  input[type='text'] {
+    flex-grow: 1;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 5px;
+    outline: none;
+    border-bottom: 1px solid #444;
+    &:focus {
+      border-bottom: 1px solid #888;
+    }
+  }
 
-.todo-item input[type='text']:focus {
-  border-bottom: 1px solid #888;
-}
-
-.todo-item.completed input[type='text'] {
-  text-decoration: line-through;
-  opacity: 0.6;
+  &:has(input:checked) {
+    text-decoration: line-through;
+    opacity: 0.6;
+  }
 }
 
 .create-button {
