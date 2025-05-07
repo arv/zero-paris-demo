@@ -75,4 +75,16 @@ body {
     text-decoration: line-through;
     opacity: 0.6;
   }
+
+  .delete {
+    border: none;
+    background-color: transparent;
+    color: #444;
+    cursor: pointer;
+    transition: all 0.3;
+
+    &:hover {
+      color: inherit;
+    }
+  }
 }

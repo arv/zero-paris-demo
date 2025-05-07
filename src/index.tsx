@@ -81,6 +81,14 @@ function TodoItem({todo}: {todo: Todo}) {
         }}
         value={description}
       />
+      <button
+        class="delete"
+        onClick={() => {
+          z.mutate.todo.delete({id});
+        }}
+      >
+        ✖
+      </button>
     </div>
   );
 }
