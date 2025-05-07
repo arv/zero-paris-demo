@@ -60,7 +60,7 @@ function TodoItem({todo}: {todo: Todo}) {
   const z = useZero();
   const {completed, id, description} = todo;
   return (
-    <div class={`todo-item`}>
+    <div class="todo-item">
       <input
         type="checkbox"
         checked={completed}
