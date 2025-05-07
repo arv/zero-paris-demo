@@ -66,12 +66,15 @@ body {
     padding: 5px;
     outline: none;
     border-bottom: 1px solid #444;
-    &:focus {
+    transition: all 0.3s;
+
+    &:focus,
+    &:hover {
       border-bottom: 1px solid #888;
     }
   }
 
-  &:has(input:checked) {
+  &:has(input:checked) input {
     text-decoration: line-through;
     opacity: 0.6;
   }
@@ -81,7 +84,7 @@ body {
     background-color: transparent;
     color: #444;
     cursor: pointer;
-    transition: all 0.3;
+    transition: 0.3s all;
 
     &:hover {
       color: inherit;
