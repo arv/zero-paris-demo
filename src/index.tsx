@@ -12,7 +12,7 @@ import './styles.css';
 
 const useZero = useZeroWithTypeParams<Schema, Mutators>;
 
-export function App() {
+function App() {
   const z = new Zero({
     schema,
     userID: 'anon',
@@ -29,28 +29,29 @@ export function App() {
   );
 }
 
-export function Root() {
+function Root() {
   const z = useZero();
   const [todos] = useQuery(z.query.todo);
   return (
     <div class="app">
-      <h1>Todo App</h1>
+      <div class="header">
+        <h1>Todo App</h1>
+        <button
+          onClick={() =>
+            z.mutate.todo.add({
+              id: nanoid(),
+              description: 'Hi Paris',
+            })
+          }
+        >
+          Create Todo
+        </button>
+      </div>
       <div class="todo-list">
         {todos.map(todo => (
           <TodoItem key={todo.id} todo={todo} />
         ))}
       </div>
-      <button
-        class="create-button"
-        onClick={() =>
-          z.mutate.todo.add({
-            id: nanoid(),
-            description: 'Hi Paris',
-          })
-        }
-      >
-        Create Todo
-      </button>
     </div>
   );
 }
