@@ -21,6 +21,7 @@ export function App() {
   });
 
   z.query.todo.preload();
+
   return (
     <ZeroProvider zero={z}>
       <Root />

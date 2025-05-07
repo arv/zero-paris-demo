@@ -8,7 +8,7 @@
     "preview": "vite preview",
     "zero-cache-dev": "zero-cache-dev -p src/shared/schema.ts",
     "format": "prettier --write .",
-    "web-server-dev": "node --experimental-strip-types --no-warnings src/server/index.ts"
+    "api-server-dev": "node --experimental-strip-types --no-warnings src/server/index.ts"
   },
   "dependencies": {
     "@dotenvx/dotenvx": "^1.41.0",
